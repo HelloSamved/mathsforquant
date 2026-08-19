@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Expectations and Moments}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Expectations and moments}
+The probability distribution defines weighted averages over the sample space, where the weight of each event is equal to its probability. These are called \emph{expected values}.
+
+\subsection*{Discrete case}
+For the discrete case,
+\[
+\mathbb{E}[f(X)] = \sum_{k=1}^n f(x_k)\,p(x_k).
+\]
+
+\subsection*{Continuous case}
+While for the continuous case,
+\[
+\mathbb{E}[f] = \int_{-\infty}^{\infty} f(x)\,p(x)\,dx.
+\]
+
+
+\section*{Mean of a distribution}
+The mean of the distribution is the expectation of the random variable itself. We denote
+\[
+\mu \equiv \mathbb{E}[X] = \overline{X} = \langle X \rangle =
+\begin{cases}
+\displaystyle \sum_k x_k\,p(x_k), & \text{(discrete)}\\[6pt]
+\displaystyle \int_{-\infty}^{\infty} x\,p(x)\,dx, & \text{(continuous)}
+\end{cases}
+\]
+
+In the case of an infinite sample space, whether continuous or discrete, the mean is not guaranteed to exist since the integral or the sum might not converge.
+
+\section*{Moments of a distribution}
+The moments of a distribution are the expectation of powers of the random variable itself.
+\[
+\mu_\ell \equiv \mathbb{E}\left[X^\ell\right] \equiv \left\langle X^\ell \right\rangle = 
+\begin{cases} 
+\displaystyle\sum_k x_k^\ell p(x_k), & \text{(discrete)}\\[6pt]
+\displaystyle\int_{-\infty}^{\infty} x^\ell p(x) \,\mathrm{d}x, & \text{(continuous)}
+\end{cases}
+\]
+
+If all the moments are known -- and if they exist -- they can be used to get the expectation of other functions using the \textbf{linearity} of the expectation operator:
+\begin{align*}
+\mathbb{E}[c\,f(X)] &= c\,\mathbb{E}[f(X)], \\
+\mathbb{E}[f(X) + g(X)] &= \mathbb{E}[f(X)] + \mathbb{E}[g(X)]
+\end{align*}
+
+\section*{Variance and standard deviation}
+Of particular interest is the second moment, in combination with the mean, defining the \textbf{variance}
+\begin{align*}
+\sigma^2 = \operatorname{Var}(X) &\equiv \mathbb{E}\left[(X - \mu)^2\right] \\
+&= \mathbb{E}\left[X^2 - 2\mu X + \mu^2\right] \\
+&= \mathbb{E}\left[X^2\right] - 2\mu \mathbb{E}[X] + \mu^2 \\
+&= \mathbb{E}\left[X^2\right] - \mu^2 \\
+&= \mathbb{E}\left[X^2\right] - \mathbb{E}[X]^2
+\end{align*}
+\section*{Higher moments characterize properties of a distribution}
+\textbf{Variance} -- dispersion measure based on the second moment:
+\[
+\sigma^2 = \mathbb{E}\left[(X-\mu)^2\right] = \int (x-\mu)^2\,p(x)\,dx
+\]
+
+\noindent\textbf{Skewness} -- asymmetry parameter based on third moments; dimensionless (normalized cumulant):
+\[
+s \equiv \frac{\mathbb{E}\left[(X-\mu)^3\right]}{\sigma^3} = \mathbb{E}\left[\left(\frac{X-\mu}{\sigma}\right)^3\right]
+\]
+
+\noindent\textbf{Kurtosis} -- measure of tail "weights" in terms of fourth moments; zero for a Gaussian (excess kurtosis), bounded below by -1:
+\[
+\kappa \equiv \frac{\mathbb{E}\left[(X-\mu)^4\right]}{\sigma^4} - 3
+\]
+
+\section*{Covariance and correlation}
+For any two random variables, not necessarily independent or identically distributed, their covariance is defined as:
+\[
+\operatorname{Cov}(X,Y) \equiv \mathbb{E}[(X - \mu_x)(Y - \mu_y)] = \mathbb{E}[XY] - \mu_x\mu_y
+\]
+
+\noindent The correlation is proportional to the covariance,
+\[
+\rho(X,Y) = \operatorname{Corr}(X,Y) \equiv \frac{\operatorname{Cov}(X,Y)}{\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}} = \mathbb{E}\left[\left(\frac{X-\mu_x}{\sigma_x}\right)\left(\frac{Y-\mu_y}{\sigma_y}\right)\right]
+\]
+
+\noindent Dividing the covariance by the standard deviations makes the correlation a pure number, and
+\[
+-1 \leq \rho(X,Y) \leq +1
+\]
+
+\end{document}
+
+
+\end{document}

@@ -1,0 +1,48 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex
+*.synctex.gz
+*.out
+*.nav
+*.snm
+*.vrb
+*.toc
+*.bbl
+*.blg
+*.ilg
+*.ind
+
+# LaTeX temp files
+*.tmp
+*.bak
+*~
+*.swp
+
+# PDFs (optional - uncomment if you want to ignore PDFs)
+# *.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+Thumbs.db
