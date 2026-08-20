@@ -92,7 +92,54 @@ For any two random variables, not necessarily independent or identically distrib
 -1 \leq \rho(X,Y) \leq +1
 \]
 
-\end{document}
+\section*{Common Distributions}
 
+\subsection*{Uniform Distribution}
+
+\begin{itemize}
+    \item \textbf{Standard form:}
+    \begin{align*}
+        p(x) &= \begin{cases}
+            1, & x \in [0,1] \\
+            0, & \text{otherwise}
+        \end{cases}, \\[0.8em]
+        \operatorname{Prob}(a < X < b) &= \int_a^b p(x)\,dx = b-a, \\[0.8em]
+        F(x) &= \int_{-\infty}^x p(x')\,dx' = x
+    \end{align*}
+
+    \item \textbf{Moments:}
+    \begin{align*}
+        \mu &= \int_{-\infty}^{\infty} x\,p(x)\,dx = \int_0^1 x\,dx = \frac{1}{2}, \\[0.8em]
+        \mu_\ell &= \int_0^1 x^\ell\,dx = \frac{1}{\ell + 1}, \\[0.8em]
+        \sigma^2 &= \int_0^1 \left(x - \frac{1}{2}\right)^2\,dx = \frac{1}{12}.
+    \end{align*}
+\end{itemize}
+
+\subsection*{Binomial Distribution}
+
+\begin{itemize}
+    \item Identify events by total number of successes versus failures, independent of the order in which they occur.
+
+    \item \textbf{Two parameters:} probability of success $p$, number of trials $n$.
+\end{itemize}
+
+\begin{align*}
+    f(k;n,p) &= \binom{n}{k}p^k q^{n-k}, \quad \text{where} \\[0.8em]
+    q &= 1-p \quad \text{is the probability of failure,} \\[0.8em]
+    \binom{n}{k} &= \frac{n!}{k!(n-k)!} = \binom{n}{n-k}.
+\end{align*}
+
+\begin{itemize}
+    \item \textbf{Mean value (the hard way):}
+\end{itemize}
+
+\begin{align*}
+    \mu = \mathbb{E}[X]
+    &= \sum_{k=0}^{\infty} k f(k;n,p) \\[0.8em]
+    &= \sum_{k=1}^{n} \frac{k n!}{k!(n-k)!}p^k q^{n-k} \\[0.8em]
+    &= np \sum_{k=1}^{n} \frac{(n-1)!}{(k-1)!(n-k)!}p^{k-1}q^{(n-1)-(k-1)} \\[0.8em]
+    &= np \sum_{k'=0}^{n'} f(k';n',p), \quad \text{where } k'=k-1,\ n'=n-1 \\[0.8em]
+    &= np.
+\end{align*}
 
 \end{document}
